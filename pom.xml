@@ -25,6 +25,7 @@
     <!--依赖包 版本管理-->
     <lombok.version>1.18.12</lombok.version>
     <mapstruct.version>1.4.1.Final</mapstruct.version>
+    <screw.version>1.0.5</screw.version>
 	</properties>
 
   <modules>
@@ -41,17 +42,23 @@
         <version>${demo.version}</version>
       </dependency>
 
-
-
       <!--end springboot-demo 模块依赖-->
 
       <!--start 子模块依赖 统一管理 -->
+
+      <!--bean 映射依赖-->
       <dependency>
         <groupId>org.mapstruct</groupId>
         <artifactId>mapstruct</artifactId>
         <version>${mapstruct.version}</version>
       </dependency>
 
+      <!--数据库 字典依赖-->
+      <dependency>
+        <groupId>cn.smallbun.screw</groupId>
+        <artifactId>screw-core</artifactId>
+        <version>${screw.version}</version>
+      </dependency>
 
 
       <!--end 子模块依赖 统一管理 -->
@@ -74,6 +81,18 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+
+    <!--jdbc 驱动-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>provided</scope>
     </dependency>
     <!--end springboot 相关依赖 -->
 
