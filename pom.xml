@@ -17,15 +17,22 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<springboot.version>2.4.0</springboot.version>
+    <mysql.connector.version>8.0.22</mysql.connector.version>
+
+    <!--子依赖 版本-->
     <demo.version>1.0.0</demo.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
+
+
     <!--依赖包 版本管理-->
     <lombok.version>1.18.12</lombok.version>
     <mapstruct.version>1.4.1.Final</mapstruct.version>
     <screw.version>1.0.5</screw.version>
+
 	</properties>
 
   <modules>
@@ -34,6 +41,20 @@
 
   <dependencyManagement>
     <dependencies>
+
+      <!--jdbc 驱动-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+        <version>${springboot.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.connector.version}</version>
+        <scope>provided</scope>
+      </dependency>
 
       <!--start springboot-demo 模块依赖-->
       <dependency>
@@ -82,18 +103,14 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <!--jdbc 驱动-->
+    <!--springboot web-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>provided</scope>
-    </dependency>
+
+
     <!--end springboot 相关依赖 -->
 
 

@@ -1,0 +1,10 @@
+demo:
+  book:
+    name: spring boot demo dev
+    price: 69
+    authors:
+      - funson
+      - fuson1
+    details:
+      firstDdate: 2010/12/01
+      publicationDate: 2020/10/01

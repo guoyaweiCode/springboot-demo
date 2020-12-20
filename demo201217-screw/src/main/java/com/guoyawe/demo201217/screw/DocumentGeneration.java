@@ -6,8 +6,6 @@ package com.guoyawe.demo201217.screw;
     import cn.smallbun.screw.core.engine.EngineTemplateType;
     import cn.smallbun.screw.core.execute.DocumentationExecute;
     import cn.smallbun.screw.core.process.ProcessConfig;
-    import com.zaxxer.hikari.HikariConfig;
-    import com.zaxxer.hikari.HikariDataSource;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.context.ApplicationContext;
     import org.springframework.stereotype.Component;
