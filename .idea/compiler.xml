@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for springBoot-demo" enabled="true">
+      <profile name="Annotation profile for springboot-demo" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -11,17 +11,27 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
         </processorPath>
-        <module name="demo201206-mapstruct" />
-        <module name="demo201217-screw" />
+        <module name="common-mbg" />
         <module name="demo201220-properties" />
-        <module name="spring-boot-demo" />
+        <module name="demo201217-screw" />
+        <module name="demo201206-mapstruct" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-mbg" target="1.8" />
       <module name="demo201206-mapstruct" target="1.8" />
       <module name="demo201217-screw" target="1.8" />
       <module name="demo201220-properties" target="1.8" />
       <module name="spring-boot-demo" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common-mbg" options="-parameters" />
+      <module name="demo201206-mapstruct" options="-parameters" />
+      <module name="demo201217-screw" options="-parameters" />
+      <module name="demo201220-properties" options="-parameters" />
+      <module name="spring-boot-demo" options="" />
+    </option>
   </component>
 </project>

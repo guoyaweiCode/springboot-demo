@@ -10,10 +10,11 @@
 	</parent>
 
 	<groupId>com.guoyw</groupId>
-	<artifactId>springBoot-demo</artifactId>
+	<artifactId>springboot-demo</artifactId>
 	<version>1.0.0</version>
-	<name>springBoot-demo</name>
-	<description>spingBoot-demo</description>
+  <packaging>pom</packaging>
+	<name>springboot-demo</name>
+	<description>springboot-demo</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -36,7 +37,11 @@
 	</properties>
 
   <modules>
+    <module>common-mbg</module>
     <module>demo201206-mapstruct</module>
+    <module>demo201217-screw</module>
+    <module>demo201220-properties</module>
+
   </modules>
 
   <dependencyManagement>

@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.guoyw</groupId>
-    <artifactId>springBoot-demo</artifactId>
+    <artifactId>springboot-demo</artifactId>
     <version>1.0.0</version>
   </parent>
 
-
 	<artifactId>common-mbg</artifactId>
+	<packaging>jar</packaging>
 	<name>common-mbg</name>
 	<description>通用 数据库自动生成</description>
 
