@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-mbg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-mbg/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo201206-mapstruct" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo201206-mapstruct/src/main/java" charset="UTF-8" />
@@ -9,5 +10,6 @@
     <file url="file://$PROJECT_DIR$/demo201217-screw/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo201220-properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo201220-properties/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo210104-shiro" charset="UTF-8" />
   </component>
 </project>

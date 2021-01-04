@@ -3,10 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/common-mbg/common-mbg.iml" filepath="$PROJECT_DIR$/common-mbg/common-mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-mbg/common-mbg.iml" filepath="$PROJECT_DIR$/common-mbg/common-mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo201206-mapstruct/demo201206-mapstruct.iml" filepath="$PROJECT_DIR$/demo201206-mapstruct/demo201206-mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo201206-mapstruct/demo201206-mapstruct.iml" filepath="$PROJECT_DIR$/demo201206-mapstruct/demo201206-mapstruct.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo201217-screw/demo201217-screw.iml" filepath="$PROJECT_DIR$/demo201217-screw/demo201217-screw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo201217-screw/demo201217-screw.iml" filepath="$PROJECT_DIR$/demo201217-screw/demo201217-screw.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo201220-properties/demo201220-properties.iml" filepath="$PROJECT_DIR$/demo201220-properties/demo201220-properties.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/spring-boot-demo.iml" filepath="$PROJECT_DIR$/.idea/spring-boot-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo201220-properties/demo201220-properties.iml" filepath="$PROJECT_DIR$/demo201220-properties/demo201220-properties.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo210104-shiro/demo210104-shiro.iml" filepath="$PROJECT_DIR$/demo210104-shiro/demo210104-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springboot-demo.iml" filepath="$PROJECT_DIR$/.idea/springboot-demo.iml" />
     </modules>
   </component>
 </project>

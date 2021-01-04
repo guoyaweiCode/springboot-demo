@@ -12,9 +12,10 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
         </processorPath>
         <module name="common-mbg" />
-        <module name="demo201220-properties" />
-        <module name="demo201217-screw" />
         <module name="demo201206-mapstruct" />
+        <module name="demo201217-screw" />
+        <module name="demo201220-properties" />
+        <module name="demo210104-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,16 +23,17 @@
       <module name="demo201206-mapstruct" target="1.8" />
       <module name="demo201217-screw" target="1.8" />
       <module name="demo201220-properties" target="1.8" />
-      <module name="spring-boot-demo" target="1.8" />
+      <module name="demo210104-shiro" target="1.8" />
+      <module name="springboot-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="common-mbg" options="-parameters" />
-      <module name="demo201206-mapstruct" options="-parameters" />
-      <module name="demo201217-screw" options="-parameters" />
-      <module name="demo201220-properties" options="-parameters" />
-      <module name="spring-boot-demo" options="" />
+      <module name="common-mbg" options="" />
+      <module name="demo201206-mapstruct" options="" />
+      <module name="demo201217-screw" options="" />
+      <module name="demo201220-properties" options="" />
+      <module name="springboot-demo" options="" />
     </option>
   </component>
 </project>
