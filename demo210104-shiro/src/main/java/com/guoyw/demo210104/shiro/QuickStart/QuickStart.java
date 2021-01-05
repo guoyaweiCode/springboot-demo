@@ -1,4 +1,4 @@
-package com.guoyw.dem210104.shiro.QuickStart;
+package com.guoyw.demo210104.shiro.QuickStart;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;

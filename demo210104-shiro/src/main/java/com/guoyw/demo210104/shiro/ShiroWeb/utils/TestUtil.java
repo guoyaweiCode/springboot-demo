@@ -1,6 +1,6 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.utils;
+package com.guoyw.demo210104.shiro.ShiroWeb.utils;
 
-import com.guoyw.dem210104.shiro.ShiroWeb.entity.UserEntity;
+import com.guoyw.demo210104.shiro.ShiroWeb.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

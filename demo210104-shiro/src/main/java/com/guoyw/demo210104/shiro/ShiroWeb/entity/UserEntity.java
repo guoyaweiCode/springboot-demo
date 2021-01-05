@@ -1,4 +1,4 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.entity;
+package com.guoyw.demo210104.shiro.ShiroWeb.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

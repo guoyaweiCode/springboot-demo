@@ -8,17 +8,25 @@
     <link href="css/base.css" rel="stylesheet">
     <link rel="icon" href="data:image/ico;base64,aWNv">
     <script>
+        $(document).ready(function () {
+            $.post("/index/checkLogin",null,function (response) {
+                if (response && response.code === '300'){
+                    location.href='main.html';
+                }
+            });
+        });
+
         function login() {
             if(!$("#userName").val() || !$("#userName").val()){
                 alert("请输入信息");
                 return false;
             }
             $.post("/index/login",{
-                "userName":$("#userName").val(),
-                "userPass":$("#userPass").val()
+                "username":$("#userName").val(),
+                "password":$("#userPass").val()
             },function (response) {
                 console.info(response);
-                if(response){
+                if(response && response.code === '200'){
                     location.href="main.html";
                 }else{
                     alert("登录错误");

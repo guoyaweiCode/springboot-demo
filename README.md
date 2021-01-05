@@ -17,6 +17,7 @@ springboot-demo
 ├── common-mbg               ---- springboot-demo 引入通用数据库实体类
 ├── demo201206-mapstruct     ---- bean 转化工具，如： entity,dto,vo 相互转化；
 ├── demo201217-screw         ---- 自动生成数据字典；
+├── demo210101-shiro         ---- shiro 安全 认证&授权；
 
 ```
 

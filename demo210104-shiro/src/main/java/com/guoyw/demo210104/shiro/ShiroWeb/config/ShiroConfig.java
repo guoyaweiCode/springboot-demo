@@ -1,4 +1,4 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.config;
+package com.guoyw.demo210104.shiro.ShiroWeb.config;
 
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;

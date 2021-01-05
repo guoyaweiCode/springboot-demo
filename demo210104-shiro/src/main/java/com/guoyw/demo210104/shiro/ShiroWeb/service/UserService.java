@@ -1,7 +1,7 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.service;
+package com.guoyw.demo210104.shiro.ShiroWeb.service;
 
-import com.guoyw.dem210104.shiro.ShiroWeb.entity.UserEntity;
-import com.guoyw.dem210104.shiro.ShiroWeb.utils.TestUtil;
+import com.guoyw.demo210104.shiro.ShiroWeb.entity.UserEntity;
+import com.guoyw.demo210104.shiro.ShiroWeb.utils.TestUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class UserService {
   public UserEntity getUserByUsername(String username){
     UserEntity userEntity = new UserEntity();
     List<UserEntity> queryUsers = testUtil.getAllUsers().stream()
-        .filter(userEntity1 -> userEntity.getUsername().equals(username))
+        .filter(user -> user.getUsername().equals(username))
         .collect(Collectors.toList());
     if (queryUsers != null && queryUsers.size() >0){
       BeanUtils.copyProperties(queryUsers.get(0),userEntity);

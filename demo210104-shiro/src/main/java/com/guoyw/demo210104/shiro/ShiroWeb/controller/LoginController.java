@@ -1,7 +1,7 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.controller;
+package com.guoyw.demo210104.shiro.ShiroWeb.controller;
 
-import com.guoyw.dem210104.shiro.ShiroWeb.entity.UserEntity;
-import com.guoyw.dem210104.shiro.ShiroWeb.service.UserService;
+import com.guoyw.demo210104.shiro.ShiroWeb.entity.UserEntity;
+import com.guoyw.demo210104.shiro.ShiroWeb.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.shiro.SecurityUtils;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -20,9 +21,9 @@ import java.util.Map;
  * @date: 2021/1/4
  **/
 
+@Slf4j
 @RestController
 @RequestMapping("/index")
-@Slf4j
 public class LoginController {
 
   @Autowired
@@ -38,7 +39,7 @@ public class LoginController {
       try {
         subject.login(token);
         // todo 设置session
-        UserEntity user = userService.getUserByUsername((String) subject.getPrincipal());
+        UserEntity user = (UserEntity) subject.getPrincipal();
         subject.getSession().setAttribute("user",user);
         result.put("code","200");
       }catch (UnknownAccountException uae){
@@ -63,6 +64,25 @@ public class LoginController {
       result.put("code","201");
     }
     return result;
+  }
+
+  @RequestMapping("/checkLogin")
+  public Map<String,String> checkLogin(){
+    HashMap<String, String> result = new HashMap<>();
+
+    Subject subject = SecurityUtils.getSubject();
+    if(subject.isAuthenticated()){
+      result.put("code","300");
+      return  result;
+    }
+    result.put("code","301");
+    return  result;
+  }
+
+  @RequestMapping("/logout")
+  public void logout(){
+    Subject subject = SecurityUtils.getSubject();
+    subject.logout();
   }
 
 }

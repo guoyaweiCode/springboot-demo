@@ -37,7 +37,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>2.3.7.RELEASE</version>
         <configuration>
-          <mainClass>com.guoyw.dem210104.shiro.Dem210104ShiroApplication</mainClass>
+          <mainClass>com.guoyw.demo210104.shiro.Demo210104ShiroApplication</mainClass>
         </configuration>
         <executions>
           <execution>

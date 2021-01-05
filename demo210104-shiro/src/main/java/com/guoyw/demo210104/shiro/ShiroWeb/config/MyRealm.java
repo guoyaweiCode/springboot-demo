@@ -1,7 +1,7 @@
-package com.guoyw.dem210104.shiro.ShiroWeb.config;
+package com.guoyw.demo210104.shiro.ShiroWeb.config;
 
-import com.guoyw.dem210104.shiro.ShiroWeb.entity.UserEntity;
-import com.guoyw.dem210104.shiro.ShiroWeb.service.UserService;
+import com.guoyw.demo210104.shiro.ShiroWeb.entity.UserEntity;
+import com.guoyw.demo210104.shiro.ShiroWeb.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
