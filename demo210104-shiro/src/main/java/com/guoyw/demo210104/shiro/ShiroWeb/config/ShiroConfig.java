@@ -45,7 +45,14 @@ public class ShiroConfig {
     Map<String, String> filterMap = new HashMap<>();
     // key 是ant路径，value配置shiro默认配置
     filterMap.put("/main/**", DefaultFilter.authc.toString());
+    filterMap.put("/mobile/**", DefaultFilter.authc.toString());
+    filterMap.put("/salary/**", DefaultFilter.authc.toString());
     filterFactoryBean.setFilterChainDefinitionMap(filterMap);
+
+    // 设置登录页
+    filterFactoryBean.setLoginUrl("/index.html");
+
+
     return filterFactoryBean;
   }
 

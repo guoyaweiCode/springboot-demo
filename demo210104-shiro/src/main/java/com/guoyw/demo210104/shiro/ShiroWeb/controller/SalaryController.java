@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SalaryController {
 
   @RequestMapping("/query")
-  private void query(){
+  private String query(){
     log.info("salary 被请求了！！");
-    return;
+    return "salary 被请求了！！";
   }
 }

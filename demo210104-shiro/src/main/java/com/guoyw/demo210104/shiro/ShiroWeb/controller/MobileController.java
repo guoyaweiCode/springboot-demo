@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MobileController {
 
   @RequestMapping("/query")
-  private void query(){
+  private String query(){
     log.info("mobile 被请求了！！");
-    return;
+    return "mobile 被请求了！！";
   }
 }
