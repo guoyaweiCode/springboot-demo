@@ -24,13 +24,13 @@
         })
 
         function queryMobile() {
-            $.get("/mobile/query", function (response) {
+            $.get("/mobile/query", null,function (response) {
                 alert(response);
             })
         }
 
         function querySalary() {
-            $.get("/salary/query", function (response) {
+            $.get("/salary/query",null, function (response) {
                 alert(response);
             })
         }

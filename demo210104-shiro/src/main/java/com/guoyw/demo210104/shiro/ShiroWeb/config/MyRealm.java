@@ -5,9 +5,12 @@ import com.guoyw.demo210104.shiro.ShiroWeb.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Set;
 
 /**
  * @className: MyRealm
@@ -26,7 +29,14 @@ public class MyRealm extends AuthorizingRealm {
   @Override
   protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
     log.info("进入 MyRealm >> 授权");
-    return null;
+    SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+
+    // 设置角色和权限
+    UserEntity user = (UserEntity) principalCollection.asList().get(0);
+    simpleAuthorizationInfo.addRoles(user.getRoles());
+    simpleAuthorizationInfo.addStringPermissions(user.getPermissions());
+
+    return simpleAuthorizationInfo;
   }
 
   // r认证
