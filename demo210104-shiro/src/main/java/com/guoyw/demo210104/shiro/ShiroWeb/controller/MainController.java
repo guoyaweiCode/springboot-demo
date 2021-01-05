@@ -26,8 +26,11 @@ public class MainController {
   public UserEntity getCurrentUser(){
 
     Subject subject = SecurityUtils.getSubject();
-    UserEntity user = (UserEntity) subject.getSession().getAttribute("user");
-    return user;
+    if(subject.isAuthenticated()){
+      UserEntity user = (UserEntity) subject.getSession().getAttribute("user");
+      return user;
+    }
+    return null;
   }
 
 }
