@@ -1,14 +1,18 @@
 package com.guoyw.demo210104.shiro.ShiroWeb.config;
 
+import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.filter.mgt.DefaultFilter;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,17 +26,17 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-  // 1、Realm 代表系统资源
+/*  // 1、Realm 代表系统资源
   @Bean
   public Realm myRealm(){
     return new MyRealm();
-  }
+  }*/
 
   // 2、SecurityManager 流程控制
   @Bean
-  public DefaultWebSecurityManager mysSecurityManager(Realm myRealm){
+  public DefaultWebSecurityManager mysSecurityManager(@Qualifier("myRealm") AuthorizingRealm myRealm, @Qualifier("mobileRealm") Realm mobileRealm){
     DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-    securityManager.setRealm(myRealm);
+    securityManager.setRealms(Arrays.asList(myRealm,mobileRealm));
 
     return securityManager;
   }
@@ -59,20 +63,5 @@ public class ShiroConfig {
 
     return filterFactoryBean;
   }
-
-  // 解决权限注解问题
-//  @Bean
-//  public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator(){
-//
-//    DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator=new DefaultAdvisorAutoProxyCreator();
-//    defaultAdvisorAutoProxyCreator.setUsePrefix(true);
-//
-//    return defaultAdvisorAutoProxyCreator;
-//  }
-//
-//  @Bean
-//  public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
-//    return new LifecycleBeanPostProcessor();
-//  }
 
 }

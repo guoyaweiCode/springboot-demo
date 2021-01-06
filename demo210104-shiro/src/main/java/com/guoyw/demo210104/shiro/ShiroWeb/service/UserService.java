@@ -34,4 +34,17 @@ public class UserService {
     }
     return  null;
   }
+
+  // 根据用户名获取用户信息
+  public UserEntity getUserByMobile(String mobile){
+    UserEntity userEntity = new UserEntity();
+    List<UserEntity> queryUsers = testUtil.getAllUsers().stream()
+        .filter(user -> user.getMobile().equals(mobile))
+        .collect(Collectors.toList());
+    if (queryUsers != null && queryUsers.size() >0){
+      BeanUtils.copyProperties(queryUsers.get(0),userEntity);
+      return userEntity;
+    }
+    return  null;
+  }
 }

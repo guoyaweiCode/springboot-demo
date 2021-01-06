@@ -11,8 +11,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Set;
-
 /**
  * @className: MyRealm
  * @description: TODO 类描述
@@ -22,7 +20,7 @@ import java.util.Set;
 
 @Slf4j
 @Configuration
-public class MyRealm extends AuthorizingRealm {
+public class MobileRealm extends AuthorizingRealm {
 
   @Autowired
   private UserService userService;
@@ -50,7 +48,7 @@ public class MyRealm extends AuthorizingRealm {
     UsernamePasswordToken userToken = (UsernamePasswordToken) authenticationToken;
     String username = userToken.getUsername();
     // 获取数据库中的用户，来跟当前用户进行对比，认证。
-    UserEntity userEntity = userService.getUserByUsername(username);
+    UserEntity userEntity = userService.getUserByMobile(username);
     if(userEntity == null){
       return  null;
     }

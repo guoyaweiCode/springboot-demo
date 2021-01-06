@@ -20,6 +20,7 @@ public class UserEntity {
 
   private String userId;
   private String username;
+  private String mobile;
   private String password;
 
   private List<String> roles;

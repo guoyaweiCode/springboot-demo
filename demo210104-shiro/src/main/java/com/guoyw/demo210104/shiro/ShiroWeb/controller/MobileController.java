@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mobile")
 public class MobileController {
 
-  @RequiresPermissions("mobile")
   @RequestMapping("/query")
   private String query(){
     /*Subject subject = SecurityUtils.getSubject();

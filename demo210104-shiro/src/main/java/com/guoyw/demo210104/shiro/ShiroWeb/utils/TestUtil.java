@@ -23,9 +23,9 @@ public class TestUtil {
   public static List<UserEntity> getAllUsers(){
     if(aEntities == null){
       aEntities = new ArrayList<>();;
-      aEntities.add(new UserEntity("1","admin","admin", Arrays.asList("admin"),Arrays.asList("mobile","salary")));
-      aEntities.add(new UserEntity("2","manager","manager", Arrays.asList("manager"),Arrays.asList("mobile")));
-      aEntities.add(new UserEntity("3","worker","worker", Arrays.asList("worker"),Arrays.asList("salary")));
+      aEntities.add(new UserEntity("1","admin","13800000000","admin", Arrays.asList("admin"),Arrays.asList("mobile","salary")));
+      aEntities.add(new UserEntity("2","manager","13800000001","manager", Arrays.asList("manager"),Arrays.asList("mobile")));
+      aEntities.add(new UserEntity("3","worker","13800000002","worker", Arrays.asList("worker"),Arrays.asList("salary")));
     }
    return aEntities;
   }
