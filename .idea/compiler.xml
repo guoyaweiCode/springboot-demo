@@ -27,14 +27,4 @@
       <module name="springboot-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="common-mbg" options="" />
-      <module name="demo201206-mapstruct" options="" />
-      <module name="demo201217-screw" options="" />
-      <module name="demo201220-properties" options="" />
-      <module name="demo210104-shiro" options="" />
-      <module name="springboot-demo" options="" />
-    </option>
-  </component>
 </project>

@@ -9,9 +9,9 @@
   </parent>
 
 
-  <artifactId>dem210104-shiro</artifactId>
+  <artifactId>demo210104-shiro</artifactId>
   <packaging>jar</packaging>
-  <name>dem210104-shiro</name>
+  <name>demo210104-shiro</name>
   <description>shiro 授权认证管理</description>
 
   <dependencies>
