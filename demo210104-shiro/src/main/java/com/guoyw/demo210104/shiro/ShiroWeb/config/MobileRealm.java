@@ -53,8 +53,6 @@ public class MobileRealm extends AuthorizingRealm {
       return  null;
     }
 
-
-
     SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(userEntity,userEntity.getPassword(),"myRealm");
     return simpleAuthenticationInfo;
   }
