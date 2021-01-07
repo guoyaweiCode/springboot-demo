@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for springboot-demo" enabled="true">
+      <profile name="Annotation profile for demo210107-shiro-example" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -16,6 +16,7 @@
         <module name="demo201217-screw" />
         <module name="demo201220-properties" />
         <module name="demo210104-shiro" />
+        <module name="demo210107-shiro-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="demo201217-screw" target="1.8" />
       <module name="demo201220-properties" target="1.8" />
       <module name="demo210104-shiro" target="1.8" />
+      <module name="demo210107-shiro-example" target="1.8" />
       <module name="springboot-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
