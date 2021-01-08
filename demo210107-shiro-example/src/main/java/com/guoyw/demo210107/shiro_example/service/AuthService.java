@@ -1,13 +1,16 @@
 package com.guoyw.demo210107.shiro_example.service;
 
+import com.guoyw.demo210107.shiro_example.conver.UserAuthConver;
 import com.guoyw.demo210107.shiro_example.dto.LoginAccountDto;
 import com.guoyw.demo210107.shiro_example.entity.*;
 import com.guoyw.demo210107.shiro_example.utils.DBTestData;
 import com.guoyw.demo210107.shiro_example.vo.UserAuthVo;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +23,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class AuthService {
+
+  @Autowired
+  private UserAuthConver userAuthConver;
 
   public UserAuthVo loginAccount(LoginAccountDto loginAccountDto) {
     UserAuthVo result = new UserAuthVo();
@@ -43,12 +49,17 @@ public class AuthService {
         .filter(roleToPermission -> roleToPermission.getRoleId().equals(roleEntity.getRoleId()))
         .collect(Collectors.toList());
 
-    List<PermissionEntity> permissionToPermissions = new ArrayList<>();
+    List<PermissionEntity> permissions = new ArrayList<>();
     roleToPermissions.forEach(rtp -> {
-      DBTestData.getAllPermissions().forEach(permission -> permission.getPermissionId().equals(rtp.getPermissionId()));
+      List<PermissionEntity> entitys = DBTestData.getAllPermissions().stream()
+          .filter(permission -> permission.getPermissionId().equals(rtp.getPermissionId()))
+          .collect(Collectors.toList());
+      permissions.addAll(entitys);
     });
 
-    return null;
+    UserAuthVo userAuthVo = userAuthConver.toUserAuthVo(userEntity, Arrays.asList(roleEntity), permissions);
+
+    return userAuthVo;
   }
 
 }

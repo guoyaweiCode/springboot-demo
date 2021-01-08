@@ -43,6 +43,7 @@
     <module>demo201217-screw</module>
     <module>demo201220-properties</module>
     <module>demo210104-shiro</module>
+    <module>demo210107-shiro-example</module>
 
   </modules>
 

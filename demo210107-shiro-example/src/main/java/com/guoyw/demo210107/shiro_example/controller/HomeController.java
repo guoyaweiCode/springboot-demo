@@ -1,9 +1,6 @@
 package com.guoyw.demo210107.shiro_example.controller;
 
 import com.guoyw.demo210107.shiro_example.dto.LoginAccountDto;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
