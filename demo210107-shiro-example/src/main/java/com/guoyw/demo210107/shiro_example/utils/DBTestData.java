@@ -18,10 +18,10 @@ public class DBTestData {
 
   public static List<UserEntity> getAllUsers() {
     List<UserEntity> users = new ArrayList<>();
-    users.add(new UserEntity(1L, "admin", "admin", "13100000000", "1111@qq.com", "张三"));
-    users.add(new UserEntity(2L, "lisi", "lisi", "13100000001", "2222@qq.com", "李四"));
-    users.add(new UserEntity(3L, "wanger", "wanger", "13100000002", "3333@qq.com", "王二"));
-    users.add(new UserEntity(4L, "manager", "manager", "13100000003", "4444@qq.com", "耗子尾汁"));
+    users.add(new UserEntity(1L, "admin", "admin", "13100000000", "1111@qq.com", "张三",true));
+    users.add(new UserEntity(2L, "lisi", "lisi", "13100000001", "2222@qq.com", "李四",true));
+    users.add(new UserEntity(3L, "wanger", "wanger", "13100000002", "3333@qq.com", "王二",false));
+    users.add(new UserEntity(4L, "manager", "manager", "13100000003", "4444@qq.com", "耗子尾汁",true));
     return users;
   }
 

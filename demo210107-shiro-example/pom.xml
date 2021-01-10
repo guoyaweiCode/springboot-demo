@@ -14,14 +14,11 @@
   <description>shiro 使用标准示例</description>
 
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>org.apache.shiro</groupId>-->
-<!--      <artifactId>shiro-spring-boot-starter</artifactId>-->
-<!--    </dependency>-->
 
+    <!--shiro 依赖-->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-aop</artifactId>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring-boot-starter</artifactId>
     </dependency>
 
     <!--mapstruct bean转化工具-->
@@ -29,6 +26,24 @@
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
     </dependency>
+
+    <!--Swagger-UI API文档生产工具-->
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>${swagger2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-spring-webmvc</artifactId>
+      <version>${swagger2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>${swagger2.version}</version>
+    </dependency>
+
 
   </dependencies>
 

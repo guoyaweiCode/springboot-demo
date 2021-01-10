@@ -21,7 +21,6 @@ import java.util.Set;
  **/
 
 @Slf4j
-@Configuration
 public class MyRealm extends AuthorizingRealm {
 
   @Autowired
@@ -41,7 +40,7 @@ public class MyRealm extends AuthorizingRealm {
     return simpleAuthorizationInfo;
   }
 
-  // r认证
+  // 认证
   @Override
   protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
     log.info("进入 MyRealm >> 认证");
@@ -54,8 +53,6 @@ public class MyRealm extends AuthorizingRealm {
     if(userEntity == null){
       return  null;
     }
-
-
 
     SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(userEntity,userEntity.getPassword(),"myRealm");
     return simpleAuthenticationInfo;

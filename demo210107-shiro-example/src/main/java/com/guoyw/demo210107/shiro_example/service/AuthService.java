@@ -62,4 +62,38 @@ public class AuthService {
     return userAuthVo;
   }
 
+  public UserAuthVo getUserAuthVoByUsernameOREmail(String usernameOrEmail){
+    UserAuthVo result = new UserAuthVo();
+    UserEntity userEntity = DBTestData.getAllUsers().stream()
+        .filter(user -> user.getUsername().equals(usernameOrEmail) || user.getEmail().equals(usernameOrEmail))
+        .findFirst()
+        .orElseThrow(()->new RuntimeException("用户不存在"));
+
+    UserToRoleEntity userToRoleEntity = DBTestData.getAllUserToRoles().stream()
+        .filter(userToRole -> userToRole.getUserId().equals(userEntity.getUserId()))
+        .findFirst()
+        .orElseThrow(()->new RuntimeException("该用户外绑定角色"));
+
+    RoleEntity roleEntity = DBTestData.getAllRoles().stream()
+        .filter(roles -> roles.getRoleId().equals(userToRoleEntity.getRoleId()))
+        .findFirst()
+        .orElseThrow(()->new RuntimeException("角色不存在"));
+
+    List<RoleToPermissionEntity> roleToPermissions = DBTestData.getAllRoleToPermissionS().stream()
+        .filter(roleToPermission -> roleToPermission.getRoleId().equals(roleEntity.getRoleId()))
+        .collect(Collectors.toList());
+
+    List<PermissionEntity> permissions = new ArrayList<>();
+    roleToPermissions.forEach(rtp -> {
+      List<PermissionEntity> entitys = DBTestData.getAllPermissions().stream()
+          .filter(permission -> permission.getPermissionId().equals(rtp.getPermissionId()))
+          .collect(Collectors.toList());
+      permissions.addAll(entitys);
+    });
+
+    UserAuthVo userAuthVo = userAuthConver.toUserAuthVo(userEntity, Arrays.asList(roleEntity), permissions);
+
+    return userAuthVo;
+  }
+
 }

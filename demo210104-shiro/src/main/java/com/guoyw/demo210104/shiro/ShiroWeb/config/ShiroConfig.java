@@ -26,17 +26,17 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-/*  // 1、Realm 代表系统资源
+  // 1、Realm 代表系统资源
   @Bean
   public Realm myRealm(){
     return new MyRealm();
-  }*/
+  }
 
   // 2、SecurityManager 流程控制
   @Bean
-  public DefaultWebSecurityManager mysSecurityManager(@Qualifier("myRealm") AuthorizingRealm myRealm, @Qualifier("mobileRealm") Realm mobileRealm){
+  public DefaultWebSecurityManager mysSecurityManager(){
     DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-    securityManager.setRealms(Arrays.asList(myRealm,mobileRealm));
+    securityManager.setRealm(myRealm());
 
     return securityManager;
   }
@@ -50,7 +50,7 @@ public class ShiroConfig {
     // 配置路径过滤器
     Map<String, String> filterMap = new HashMap<>();
     // key 是ant路径，value配置shiro默认配置
-    filterMap.put("/main/**", "authc");
+//    filterMap.put("/main/**", "authc");
 //    filterMap.put("/mobile/**", "authc,perms[mobile]");
 //    filterMap.put("/salary/**", "authc,perms[salary]");
     filterFactoryBean.setFilterChainDefinitionMap(filterMap);
@@ -62,6 +62,25 @@ public class ShiroConfig {
 //    filterFactoryBean.setUnauthorizedUrl("/index/Unauthorize");
 
     return filterFactoryBean;
+  }
+
+  @Bean
+  public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
+    return new LifecycleBeanPostProcessor();
+  }
+
+  @Bean
+  public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
+    DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+    advisorAutoProxyCreator.setProxyTargetClass(true);
+    return advisorAutoProxyCreator;
+  }
+
+  @Bean
+  public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
+    AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+    authorizationAttributeSourceAdvisor.setSecurityManager(mysSecurityManager());
+    return authorizationAttributeSourceAdvisor;
   }
 
 }

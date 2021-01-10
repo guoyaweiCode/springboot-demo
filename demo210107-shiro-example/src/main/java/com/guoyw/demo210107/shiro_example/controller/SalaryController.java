@@ -1,10 +1,9 @@
-package com.guoyw.demo210104.shiro.ShiroWeb.controller;
+package com.guoyw.demo210107.shiro_example.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/salary")
+@Api(tags = "工资controller")
 public class SalaryController {
 
-//  @RequiresPermissions({"salary"})
+  @ApiOperation("查看工资")
+  @RequiresPermissions("salary")
   @RequestMapping("/query")
-  @RequiresRoles({"admin"})
   private String query(){
     /*Subject subject = SecurityUtils.getSubject();
     if(!subject.isPermitted("salary")){

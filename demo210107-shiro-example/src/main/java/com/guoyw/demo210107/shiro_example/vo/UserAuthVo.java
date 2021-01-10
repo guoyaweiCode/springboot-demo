@@ -28,6 +28,8 @@ public class UserAuthVo {
 
   private String name;
 
+  private boolean enabled;
+
   private List<RoleEntity> roles;
 
   private List<PermissionEntity> permissions;

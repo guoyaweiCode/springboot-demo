@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @className: UserEntity
  * @description: TODO 类描述
@@ -16,7 +18,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class UserEntity implements Serializable {
 
   private Long userId;
 
@@ -29,6 +31,8 @@ public class UserEntity {
   private String email;
 
   private String name;
+
+  private boolean enabled;
 
 
 }
