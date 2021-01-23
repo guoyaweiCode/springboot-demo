@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/salary")
 public class SalaryController {
 
-//  @RequiresPermissions({"salary"})
+  @RequiresPermissions({"salary"})
   @RequestMapping("/query")
-  @RequiresRoles({"admin"})
+//  @RequiresRoles({"admin"})
   private String query(){
     /*Subject subject = SecurityUtils.getSubject();
     if(!subject.isPermitted("salary")){
