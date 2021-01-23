@@ -8,25 +8,12 @@
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>demo210107-shiro-example</artifactId>
+  <artifactId>demo210123-result</artifactId>
   <packaging>jar</packaging>
-  <name>demo210107-shiro-example</name>
-  <description>shiro 使用标准示例</description>
+  <name>demo210123-result</name>
+  <description>封装ResposeResult</description>
 
   <dependencies>
-
-    <!--shiro 依赖-->
-    <dependency>
-      <groupId>org.apache.shiro</groupId>
-      <artifactId>shiro-spring-boot-starter</artifactId>
-    </dependency>
-
-    <!--mapstruct bean转化工具-->
-    <dependency>
-      <groupId>org.mapstruct</groupId>
-      <artifactId>mapstruct</artifactId>
-    </dependency>
-
     <!--Swagger-UI API文档生产工具-->
     <dependency>
       <groupId>io.springfox</groupId>
@@ -40,10 +27,19 @@
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger-ui</artifactId>
     </dependency>
-
-
   </dependencies>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <plugins>
@@ -62,7 +58,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>2.3.7.RELEASE</version>
         <configuration>
-          <mainClass>com.guoyw.demo210107.shiro_example.Demo210107ShiroExampleApplication</mainClass>
+          <mainClass>com.guoyw.demo210123.result.Demo210123ResultApplication</mainClass>
         </configuration>
         <executions>
           <execution>
