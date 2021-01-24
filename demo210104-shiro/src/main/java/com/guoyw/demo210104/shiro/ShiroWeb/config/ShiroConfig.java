@@ -24,10 +24,10 @@ import java.util.Map;
  **/
 
 @Slf4j
-@Configuration
+//@Configuration
 public class ShiroConfig {
 
-  @Bean
+  /*@Bean
   public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
     return new LifecycleBeanPostProcessor();
   }
@@ -101,12 +101,12 @@ public class ShiroConfig {
     return filterFactoryBean;
   }
 
-  /**
+  *//**
    *  开启shiro aop注解支持.
    *  使用代理方式;所以需要开启代码支持;
    * @param securityManager
    * @return
-   */
+   *//*
   @Bean
   public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager){
     AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
@@ -115,12 +115,12 @@ public class ShiroConfig {
   }
 
 
-  /**
+  *//**
    * 下面几个类是网上搜来的解决方案
    * @return
-   */
+   *//*
 
-/*  @Bean
+*//*  @Bean
   public LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
     return new LifecycleBeanPostProcessor();
   }
@@ -137,6 +137,6 @@ public class ShiroConfig {
     AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
     authorizationAttributeSourceAdvisor.setSecurityManager(securityManager());
     return authorizationAttributeSourceAdvisor;
-  }*/
-
+  }*//*
+*/
 }

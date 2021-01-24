@@ -95,30 +95,6 @@ public class ShiroConfig {
   }
 
 
-  /*
-   * 下面两个是为了使生效
-   * @RequiresRoles(value={"admin","user"},logical = Logical.OR)
-   * @RequiresPermissions(value={"add","update"},logical = Logical.OR)
-   */
-  @Bean
-  public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
-    return new LifecycleBeanPostProcessor();
-  }
-
-  @Bean
-  public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
-    DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
-    advisorAutoProxyCreator.setProxyTargetClass(true);
-    return advisorAutoProxyCreator;
-  }
-
-  @Bean
-  public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
-    AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
-    authorizationAttributeSourceAdvisor.setSecurityManager(securityManager());
-    return authorizationAttributeSourceAdvisor;
-  }
-
   @Bean
   public AccountRealm accountRealm(){
     AccountRealm accountRealm = new AccountRealm();

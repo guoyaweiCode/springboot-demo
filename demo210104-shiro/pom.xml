@@ -17,13 +17,14 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.shiro</groupId>
-      <artifactId>shiro-spring</artifactId>
+      <artifactId>shiro-spring-boot-starter</artifactId>
+      <version>${shiro.version}</version>
     </dependency>
 
-    <dependency>
+   <!-- <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
-    </dependency>
+    </dependency>-->
 
   </dependencies>
   <build>
